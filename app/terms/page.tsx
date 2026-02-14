@@ -1,20 +1,18 @@
-"use client"
 import {PageTitle} from "@/shared/ui/pageTitle";
 import {PageWrapper} from "@/shared/ui/pageWrapper";
-import {useEffect, useState} from "react";
-import {Term} from "@/shared/model/term";
 import {getApi} from "@/shared/api";
 import {TermCard} from "@/entities/term/ui/TermCard";
 
-export default function Page() {
+export default async function Page() {
 
-    const [terms, setTerms] = useState<Term[]>([]);
+    const terms = await getApi.getTerms();
+    // const [terms, setTerms] = useState<Term[]>([]);
 
-    useEffect(() => {
-        getApi.getTerms().then(response => {
-            setTerms(response.data);
-        })
-    }, []);
+    // useEffect(() => {
+    //     getApi.getTerms().then(response => {
+    //         setTerms(response.data);
+    //     })
+    // }, []);
 
     return (
         <PageWrapper transparent>

@@ -94,8 +94,8 @@ const LayoutFlow = () => {
     const {fitView} = useReactFlow();
 
     useEffect(() => {
-        getApi.getTerms().then(response => setTerms(response.data));
-        getApi.getRelations().then(response => setRelations(response.data));
+        getApi.getTerms().then(terms => setTerms(terms));
+        getApi.getRelations().then(relations => setRelations(relations));
     }, [setTerms, setRelations]);
 
     const onLayout = useCallback(({direction = 'DOWN'}) => {
