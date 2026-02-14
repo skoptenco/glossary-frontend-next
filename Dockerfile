@@ -14,6 +14,10 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED 1
+
+COPY ./certificate.crt /usr/src/certs/certificate.crt
+ENV NODE_EXTRA_CA_CERTS=/usr/src/certs/certificate.crt
+
 RUN npm run build
 
 # Stage 3: Run the application in standalone mode
@@ -28,6 +32,9 @@ COPY --from=builder /app/.next/standalone ./
 # Copy public and static files
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/static ./.next/static
+
+COPY ./certificate.crt /usr/src/certs/certificate.crt
+ENV NODE_EXTRA_CA_CERTS=/usr/src/certs/certificate.crt
 
 # Expose port 3000 and start the application
 EXPOSE 3000

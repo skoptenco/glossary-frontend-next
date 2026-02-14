@@ -14,7 +14,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Create env file
-        run: echo "${{ secrets.ENV_FILE }}" > .env
+        run: |
+          echo "${{ secrets.ENV_FILE }}" > .env
+          echo "${{ secrets.SSL_CERT }}" > certificate.crt
         working-directory: ./
 
       - name: Log in to Docker Hub
