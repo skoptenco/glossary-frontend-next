@@ -2,6 +2,18 @@ import {PageTitle} from "@/shared/ui/pageTitle";
 import {PageWrapper} from "@/shared/ui/pageWrapper";
 import {getApi} from "@/shared/api";
 import {TermCard} from "@/entities/term/ui/TermCard";
+import type {Metadata} from "next";
+
+export const metadata: Metadata = {
+    title: "Список терминов ВКР",
+    description: "Полный список терминов по SEO и интернет-маркетингу. Быстрый поиск, определения понятий и навигация по тематике продвижения сайтов.",
+    robots: {
+        index: true,
+    },
+    alternates: {
+        canonical: `${process.env.NEXT_PUBLIC_HOST_URL}/terms`
+    }
+}
 
 export default async function Page() {
 

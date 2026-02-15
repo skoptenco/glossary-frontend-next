@@ -4,7 +4,13 @@ import {PageWrapper} from "@/shared/ui/pageWrapper";
 
 export const metadata: Metadata = {
     title: "Глоссарий терминов ВКР",
-    description: "Глоссарий терминов по теме продвижения веб-сайтов. Изучайте SEO-понятия, алгоритмы ранжирования и связи между терминами в удобном формате."
+    description: "Глоссарий терминов по теме продвижения веб-сайтов. Изучайте SEO-понятия, алгоритмы ранжирования и связи между терминами в удобном формате.",
+    robots: {
+        index: true,
+    },
+    alternates: {
+        canonical: `${process.env.NEXT_PUBLIC_HOST_URL}`
+    }
 }
 
 export default function Home() {
