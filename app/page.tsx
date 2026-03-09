@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     `,
     robots: {
         index: true,
+        follow: true,
     },
     alternates: {
         canonical: `${process.env.NEXT_PUBLIC_HOST_URL}`

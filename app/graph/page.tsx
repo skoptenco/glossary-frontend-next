@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     `,
     robots: {
         index: true,
+        follow: true,
     },
     alternates: {
         canonical: `${process.env.NEXT_PUBLIC_HOST_URL}/graph`
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
 export default function Page() {
     return (
         <PageWrapper transparent>
-            <PageTitle>Graph</PageTitle>
+            <PageTitle>Семантический граф связи</PageTitle>
             <div style={{width: '100vw', height: '100vh'}}>
                 <FlowGraph/>
             </div>

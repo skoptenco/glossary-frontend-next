@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     Быстрый поиск, определения понятий и навигация по тематике продвижения сайтов. 
     `,
     robots: {
+        follow: true,
         index: true,
     },
     alternates: {

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import type {Term} from "@/shared/model/term";
+import type {Term, TermDetailed} from "@/shared/model/term";
 import type {Relation} from "@/shared/model/relation";
 
 const CLIENT_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
@@ -13,7 +13,6 @@ const axiosInstance = axios.create({
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS"
     },
     adapter: "fetch",
-
 })
 
 export const getApi = {
@@ -35,4 +34,12 @@ export const getApi = {
             return [];
         }
     },
+    getTermByKeyword: async (keyword: string) => {
+        try {
+            const response = await axiosInstance.get<TermDetailed>(`/terms/${keyword}`);
+            return response.data;
+        } catch (e) {
+            console.error(e);
+        }
+    }
 }

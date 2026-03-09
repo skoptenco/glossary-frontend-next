@@ -21,7 +21,7 @@ const transformTermToNode = (term: Term): Node => {
         id: term.keyword,
         position: {x: 0, y: 0},
         data: {
-            label: term.keyword
+            label: term.title
         }
     }
 }

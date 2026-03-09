@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /*
+Sitemap: https://skoptenco-vkr.ru/sitemap.xml
