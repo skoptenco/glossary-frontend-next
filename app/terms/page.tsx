@@ -9,7 +9,8 @@ export const metadata: Metadata = {
     description: `
     На данной странице представлен список терминов связанный с тематикой SEO. 
     Термины представлены в виде списка карточек с заголовком и описанием.
-    Быстрый поиск, определения понятий и навигация по тематике продвижения сайтов. 
+    Быстрый поиск, определения понятий и навигация по тематике продвижения сайтов.
+    Список SEO-терминов с понятными определениями: поисковая оптимизация, индексация, ранжирование, ключевые слова, мета-теги, семантика, трафик, релевантность и другие понятия SEO. 
     `,
     robots: {
         follow: true,
@@ -23,13 +24,6 @@ export const metadata: Metadata = {
 export default async function Page() {
 
     const terms = await getApi.getTerms();
-    // const [terms, setTerms] = useState<Term[]>([]);
-
-    // useEffect(() => {
-    //     getApi.getTerms().then(response => {
-    //         setTerms(response.data);
-    //     })
-    // }, []);
 
     return (
         <PageWrapper transparent>
