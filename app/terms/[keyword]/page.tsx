@@ -24,6 +24,14 @@ export async function generateMetadata({params}: { params: { keyword: string } }
     };
 }
 
+const renderText = (text: string) => {
+    return (
+        <>
+            {text.split("\n").map(el => (<p key={el}>{el}</p>))}
+        </>
+    )
+}
+
 export default async function Page({params}: { params: Promise<{ keyword: string }> }) {
     const {keyword} = await params;
     const term = await getApi.getTermByKeyword(keyword);
@@ -40,7 +48,7 @@ export default async function Page({params}: { params: Promise<{ keyword: string
     return (
         <PageWrapper>
             <PageTitle>{term.title}</PageTitle>
-            <p>{term.description}</p>
+            {renderText(term.full_description)}
         </PageWrapper>
     )
 
