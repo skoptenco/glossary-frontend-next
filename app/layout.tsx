@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import {Header} from "@/widgets/header";
+import {ReactNode} from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +16,7 @@ const geistMono = Geist_Mono({
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -24,7 +25,7 @@ export default function RootLayout({
       >
         <div className="h-dvh px-8">
             <Header/>
-            <div style={{height: "calc(100% - 68px)"}} className="py-4">
+            <div style={{height: "calc(100% - 68px)", overflowY: "auto"}} className="py-4 rounded-b-md">
                 {children}
             </div>
         </div>

@@ -3,6 +3,7 @@ import {PageWrapper} from "@/shared/ui/pageWrapper";
 import {getApi} from "@/shared/api";
 import {TermCard} from "@/entities/term/ui/TermCard";
 import type {Metadata} from "next";
+import clsx from "clsx";
 
 export const metadata: Metadata = {
     title: "Список SEO терминов",
@@ -28,7 +29,13 @@ export default async function Page() {
     return (
         <PageWrapper transparent>
             <PageTitle color="#FFF">Список терминов</PageTitle>
-            <div className="grid grid-cols-4 gap-2">
+            <div className={clsx(
+                "grid gap-2",
+                "grid-cols-1",
+                "sm:grid-cols-2",
+                "md:grid-cols-3",
+                "xl:grid-cols-4",
+            )}>
                 {terms.map(term => (
                     <TermCard term={term} key={term.keyword}/>))}
             </div>

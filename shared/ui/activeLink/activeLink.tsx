@@ -14,7 +14,7 @@ export default function ActiveLink(props: ActiveLinkProps) {
     return (
         <Link
             className={clsx(
-                "appearance-none border-none outline-none p-2 rounded-xl  text-sm font-semibold hover:bg-indigo-800 hover:text-white",
+                "appearance-none border-none outline-none p-2 rounded-xl  text-sm font-semibold hover:bg-indigo-800 hover:text-white whitespace-nowrap",
                 active ? "bg-indigo-800 text-white" : "bg-white text-black",
             )}
             {...restProps}

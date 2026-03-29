@@ -10,7 +10,7 @@ export default function PageWrapper(props: PageWrapperProps) {
 
     return (
         <div className={clsx(
-            "flex flex-col w-full h-full gap-6 p-4 text-black",
+            "flex flex-col w-full h-full gap-6 p-4 text-black rounded-2xl overflow-y-auto",
             transparent ? "bg-transparent" : "bg-white",
         )}>
             {children}

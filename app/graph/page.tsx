@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 export default function Page() {
     return (
         <PageWrapper transparent>
-            <PageTitle>Семантический граф связи</PageTitle>
+            <PageTitle color="#FFF">Семантический граф связи</PageTitle>
             <div style={{width: '100vw', height: '100vh'}}>
                 <FlowGraph/>
             </div>

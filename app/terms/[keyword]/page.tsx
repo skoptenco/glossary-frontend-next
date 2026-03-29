@@ -1,5 +1,6 @@
 "use server"
 import {getApi} from "@/shared/api";
+import { SlArrowLeft } from "react-icons/sl";
 import {PageTitle} from "@/shared/ui/pageTitle";
 import {PageWrapper} from "@/shared/ui/pageWrapper";
 import {Metadata} from "next";
@@ -48,7 +49,12 @@ export default async function Page({params}: { params: Promise<{ keyword: string
 
     return (
         <PageWrapper>
-            <Link href="/terms">К списку</Link>
+            <Link href="/terms"
+                  className="flex gap-2 items-center appearance-none border-none outline-none p-2 rounded-xl max-w-max  text-sm font-semibold text-white bg-indigo-800 hover:bg-indigo-600 hover:text-white whitespace-nowrap"
+            >
+                <SlArrowLeft/>
+                К списку
+            </Link>
             <PageTitle>{term.title}</PageTitle>
             {renderText(term.full_description)}
         </PageWrapper>
