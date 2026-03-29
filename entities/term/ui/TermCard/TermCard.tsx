@@ -10,12 +10,13 @@ const TermCard: FC<TermCardProps> = props => {
     const { term } = props;
 
     return (
-        <div
-            className="h-80 bg-white rounded-2xl flex flex-col gap-2 py-3 px-2"
+        <a
+            className="h-80 bg-white rounded-2xl flex flex-col gap-2 py-3 px-2 cursor-pointer"
+            href={`/terms/${term.keyword}`}
         >
             <h3 className="text-lg font-medium">{term.title}</h3>
             <p style={{ color: "#3B3B3B80" }} className="text-sm font-normal">{term.description}</p>
-        </div>
+        </a>
     )
 };
 

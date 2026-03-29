@@ -1,7 +1,10 @@
+"use server"
 import {getApi} from "@/shared/api";
 import {PageTitle} from "@/shared/ui/pageTitle";
 import {PageWrapper} from "@/shared/ui/pageWrapper";
 import {Metadata} from "next";
+import Link from "next/dist/client/link";
+import {MDXRemote} from "next-mdx-remote/rsc";
 
 export async function generateMetadata({params}: { params: { keyword: string } }): Promise<Metadata> {
     const {keyword} = await params;
@@ -26,9 +29,7 @@ export async function generateMetadata({params}: { params: { keyword: string } }
 
 const renderText = (text: string) => {
     return (
-        <>
-            {text.split("\n").map(el => (<p key={el}>{el}</p>))}
-        </>
+        <MDXRemote source={text} />
     )
 }
 
@@ -47,6 +48,7 @@ export default async function Page({params}: { params: Promise<{ keyword: string
 
     return (
         <PageWrapper>
+            <Link href="/terms">К списку</Link>
             <PageTitle>{term.title}</PageTitle>
             {renderText(term.full_description)}
         </PageWrapper>
